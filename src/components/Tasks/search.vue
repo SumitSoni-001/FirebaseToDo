@@ -5,7 +5,6 @@
     label="Search"
     class="col"
     outlined
-    counter
     :dense="dense">
         <template v-slot:prepend>
             <q-icon name="search" />

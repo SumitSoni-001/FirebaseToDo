@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 // import example from './module-example'
 import tasks from './store-tasks'
 import resume from './store-resume'
+import settings from './store-settings'
 
 Vue.use(Vuex)
 
@@ -21,7 +22,8 @@ export default function (/* { ssrContext } */) {
     modules: {
       // example,
       tasks,
-      resume
+      resume,
+      settings
     },
 
     // enable strict mode (adds overhead!)

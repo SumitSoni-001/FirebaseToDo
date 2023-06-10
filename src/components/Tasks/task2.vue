@@ -52,7 +52,7 @@ export default {
       showEditDialog: false
     }
   },
-  computed: {
+  computed: { // Computed object do not contain functions with parameters. (Only the getter properties are allowed)
     ...mapState('tasks', ['search']),
     highlightedName () {
       return this.searchHighlight(this.task.name, this.search)

@@ -10,7 +10,8 @@
           <form @submit.prevent="saveTask"> <!-- This will prevent the page from reloading when the submit button is pressed as well. -->
 
 <!-- Task name -->
-            <div class="q-mb-md">
+            <!-- <div class="q-mb-md"> -->
+            <div>
                 <q-input
                 clearable
                 outlined

@@ -73,11 +73,11 @@ export default {
           icon: 'list',
           route: '/'
         },
-        {
-          title: 'Personal Details',
-          icon: 'person',
-          route: '/resume'
-        },
+        // {
+        //   title: 'Personal Details',
+        //   icon: 'person',
+        //   route: '/resume'
+        // },
         {
           title: 'Settings',
           icon: 'settings',
@@ -95,7 +95,7 @@ export default {
 </script>
 
 <style>
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 500px) {
   .q-footer {
     display: none;
   }

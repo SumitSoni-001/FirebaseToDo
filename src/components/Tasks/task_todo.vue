@@ -1,4 +1,9 @@
 <template>
+  <transition
+  appear
+  enter-active-class="animated fadeInDown"
+  leave-active-class="animated fadeOutDown absolute-top"
+  >
   <div class="q-my-sm">
     <listHeader bgColor="bg-orange-4">ToDo</listHeader>
     <!-- Object.keys(tasks) - This will give us all the keys in 'tasks' array and we are showing the list if the 'tasks' array has some items. -->
@@ -37,6 +42,7 @@
       :id="key"></task>
   </q-list>
   </div>
+  </transition>
 </template>
 
 <script>

@@ -10,9 +10,10 @@
           <form @submit.prevent="saveTask"> <!-- This will prevent the page from reloading when the submit button is pressed as well. -->
 
 <!-- Task name -->
-            <div class="q-mb-md">
+            <div>
                 <q-input
                 clearable
+                clear-icon="close"
                 outlined
                 v-model="edittedTask.name"
                 label="Task"
@@ -26,7 +27,7 @@
 
 <!-- Date -->
             <div class="q-mb-md">
-                <q-input clearable clear-icon="cancel" outlined v-model="edittedTask.date" label="Due Date">
+                <q-input clearable clear-icon="close" outlined v-model="edittedTask.date" label="Due Date">
                     <template v-slot:append>
                         <q-icon name="event" class="cursor-pointer">
                             <q-popup-proxy cover transition-show="scale" transition-hide="scale">

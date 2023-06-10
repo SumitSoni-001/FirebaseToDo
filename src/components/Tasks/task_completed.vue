@@ -1,4 +1,9 @@
 <template>
+  <transition
+  appear
+  enter-active-class="animated fadeInDown"
+  leave-active-class="animated fadeOutUp"
+  >
   <div class="q-mt-lg">
     <listHeader bgColor="bg-green-4">Completed</listHeader>
     <q-list
@@ -11,6 +16,7 @@
        :id="key"></task>
    </q-list>
   </div>
+  </transition>
 </template>
 
 <script>

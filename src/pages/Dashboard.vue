@@ -1,27 +1,36 @@
 <template>
-  <q-page class="q-pa-md">
+  <q-page>
 
-    <div class="row">
-      <search></search>
-      <sort></sort>
+    <div class="q-pa-md absolute full-width full-height column">
+      <div class="row q-mb-md">
+        <search></search>
+        <sort></sort>
+      </div>
+
+      <q-scroll-area class="q-scroll-area-tasks">
+        <!-- <div class="relative-position"> -->
+        <!-- Tasks Todo -->
+        <no_task v-if="!Object.keys(task_todo).length && !search" class="q-ma-sm" style="border-radius: 5px;"></no_task>
+
+        <task_todo v-if="Object.keys(task_todo).length" :task_todo="task_todo" />
+
+        <!-- Completed Tasks -->
+        <task_completed v-if="Object.keys(task_completed).length" :task_completed="task_completed" />
+
+        <!-- </div> -->
+      </q-scroll-area>
+
+      <q-dialog v-model="showAddDialog">
+        <!-- closeDialog is a custom event created in "AddTask.vue" which will close the addTask dialog when 'save' button is clicked -->
+        <AddTask @closeDialog="showAddDialog = false" />
+      </q-dialog>
+
+      <!-- "no-pointer-event" class will disable all the pointer events and "all-pointer-event" class will enable all the events. -->
+      <div class="absolute-bottom text-center q-mb-lg no-pointer-events">
+        <q-btn class="all-pointer-events" @click="showAddDialog = true" round size="18px" color="primary" icon="add" />
+      </div>
     </div>
 
-    <!-- Tasks Todo -->
-    <no_task v-if="!Object.keys(task_todo).length && !search" class="q-ma-sm" style="border-radius: 5px;"></no_task>
-
-    <task_todo v-if="Object.keys(task_todo).length" :task_todo="task_todo" />
-
-    <!-- Completed Tasks -->
-    <task_completed v-if="Object.keys(task_completed).length" :task_completed="task_completed" />
-
-    <q-dialog v-model="showAddDialog">
-      <!-- closeDialog is a custom event created in "AddTask.vue" which will close the addTask dialog when 'save' button is clicked -->
-      <AddTask @closeDialog="showAddDialog = false" />
-    </q-dialog>
-
-    <div class="absolute-bottom text-center q-mb-lg">
-      <q-btn @click="showAddDialog = true" round size="18px" color="primary" icon="add" />
-    </div>
   </q-page>
 </template>
 
@@ -73,4 +82,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.q-scroll-area-tasks {
+  display: flex;
+  flex-grow: 1;
+}
+</style>

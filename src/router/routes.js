@@ -6,7 +6,7 @@ const routes = [
       { path: '', component: () => import('src/pages/Dashboard.vue') },
       { path: '/resume', component: () => import('src/pages/ResumeEdit.vue') },
       { path: '/viewResume', component: () => import('src/pages/ViewResume.vue') },
-      { path: '/settings', co6mponent: () => import('src/pages/Settings.vue') },
+      { path: '/settings', component: () => import('src/pages/Settings.vue') },
       { path: '/about', component: () => import('src/pages/About.vue') }
     ]
   },
